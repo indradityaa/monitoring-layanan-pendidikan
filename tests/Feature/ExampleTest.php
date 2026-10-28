@@ -1,7 +1,9 @@
 <?php
 
-test('the application returns a successful response', function () {
-    $response = $this->get('/');
+test('halaman login dapat diakses tanpa autentikasi', function () {
+    $this->withoutVite();
 
-    $response->assertStatus(200);
+    $response = $this->get('/login');
+
+    $response->assertOk();
 });

@@ -1,58 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Informasi Monitoring dan Pelaporan Kegiatan Layanan Pendidikan
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Deskripsi
 
-## About Laravel
+Aplikasi web untuk membantu pengelolaan dan monitoring kegiatan layanan pendidikan, termasuk pencatatan kegiatan, penjadwalan, penugasan petugas, dan pengelolaan laporan kegiatan.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Tujuan
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Mendukung pengelolaan informasi kegiatan layanan pendidikan agar data kegiatan, jadwal, penugasan, dan laporan dapat dikelola secara terstruktur.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fitur Utama
 
-## Learning Laravel
+### Admin
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Mengelola data kegiatan.
+- Mengelola jadwal kegiatan.
+- Mengelola penugasan petugas.
+- Memeriksa, memvalidasi, dan meminta revisi laporan.
+- Mengelola jenis kegiatan dan lokasi.
+- Melihat dashboard monitoring.
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Petugas
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+- Melihat informasi kegiatan dan jadwal sesuai penugasan.
+- Membuat dan mengelola laporan kegiatan.
+- Mengirim laporan untuk validasi.
+- Memperbaiki dan mengirim ulang laporan yang diminta revisi.
 
-## Agentic Development
+### Pimpinan
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+- Melihat dashboard monitoring kegiatan.
+- Melihat ringkasan dan grafik informasi kegiatan.
 
-```bash
-composer require laravel/boost --dev
+## Teknologi
 
-php artisan boost:install
-```
+- PHP dan Laravel
+- MySQL
+- Blade
+- Tailwind CSS
+- Vite
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+## Persyaratan
 
-## Contributing
+- PHP dan ekstensi yang dibutuhkan oleh proyek.
+- Composer.
+- Node.js dan npm.
+- MySQL.
+- Web browser.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Gunakan versi perangkat lunak yang sesuai dengan konfigurasi proyek.
 
-## Code of Conduct
+## Instalasi Lokal
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. Clone repository dan masuk ke folder proyek.
+2. Jalankan `composer install`.
+3. Buat file `.env` berdasarkan `.env.example` jika belum tersedia.
+4. Atur konfigurasi database pada `.env`.
+5. Jalankan `php artisan key:generate` jika aplikasi baru disiapkan.
+6. Pada database baru yang memang disiapkan untuk instalasi, jalankan `php artisan migrate --seed`.
+7. Jalankan `npm install`.
+8. Jalankan `npm run dev` pada terminal pertama.
+9. Jalankan `php artisan serve` pada terminal kedua.
+10. Buka alamat lokal yang ditampilkan oleh Laravel.
 
-## Security Vulnerabilities
+Jangan menjalankan migrasi atau seeder pada database yang berisi data penting tanpa memahami dampaknya dan membuat backup terlebih dahulu.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Pengujian
 
-## License
+Jalankan pengujian otomatis menggunakan:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+`php artisan test`
+
+## Keamanan
+
+- File `.env` tidak boleh diunggah ke repository.
+- Jangan menyimpan password atau kredensial asli di README.
+- Gunakan `APP_DEBUG=false` untuk lingkungan produksi.
+- Akses fitur dibatasi berdasarkan role pengguna.
+
+## Status Pengujian
+
+Terakhir tercatat: 27 pengujian otomatis berhasil (27 PASS).
+
+## Status Proyek
+
+Sistem telah melalui pengujian fungsional manual dan pengujian otomatis. Pengembangan serta validasi lanjutan mengikuti hasil konsultasi dan kebutuhan sistem yang telah disepakati.
